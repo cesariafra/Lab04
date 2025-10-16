@@ -23,3 +23,5 @@ class Crociera:
         """Stampa l'elenco dei passeggeri mostrando, per ognuno, la cabina a cui è associato, quando applicabile """
         # TODO
 
+if __name__ == '__main__':
+    print()
