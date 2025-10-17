@@ -22,7 +22,6 @@ def main():
             while nuovo_nome == '':
                 nuovo_nome = input("Inserisci il nuovo nome della crociera: ")
             crociera.nome=nuovo_nome
-        # GETTER E SETTER
 
         elif scelta == "2":
             file_path = "dati_crociera.csv"
