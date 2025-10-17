@@ -24,15 +24,15 @@ class Crociera:
                 for line in file:
                     line=line.strip().split(',')
                     if line[0].startswith('C') and len(line)==4:
-                        cabina=Cabina(line[0], int(line[1]), int(line[2]), int(line[3]))
+                        cabina=Cabina(line[0], int(line[1]), int(line[2]), float(line[3]))
                         self.cabine.append(cabina)
                     elif line[0].startswith('C') and line[4].isdigit():
-                        prezzo=int(line[3])*(1+(0.1*int(line[4])))
-                        cabina = Cabina_Animali(line[0], int(line[1]), int(line[2]), int(line[3]), prezzo, int(line[4]))
+                        prezzo=(float(line[3]))*(1+(0.1*int(line[4])))
+                        cabina = Cabina_Animali(line[0], int(line[1]), int(line[2]), int(line[4]), prezzo)
                         self.cabine.append(cabina)
                     elif line[0].startswith('C') and line[4].isalnum():
-                        prezzo=int(line[3])*(1.2)
-                        cabina = Cabina_Deluxe(line[0], int(line[1]), int(line[2]), int(line[3]), prezzo, line[4])
+                        prezzo=(float(line[3]))*(1.2)
+                        cabina = Cabina_Deluxe(line[0], int(line[1]), int(line[2]), line[4], prezzo)
                         self.cabine.append(cabina)
                     else:
                         passeggero=Passeggero(line[0], line[1], line[2])
@@ -49,7 +49,7 @@ class Crociera:
         # TODO
 
     def cabine_ordinate_per_prezzo(self):
-        sorted(self.cabine, key=lambda cabina:)
+        return sorted(self.cabine, key=lambda c: c.prezzo)
         """Restituisce la lista ordinata delle cabine in base al prezzo"""
         # TODO
 
