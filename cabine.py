@@ -46,4 +46,3 @@ class Cabina_Deluxe(Cabina):
 
     def __repr__(self):
         return f'CodC: {self.codice}, Letti: {self.letti}, Ponte: {self.ponte}, Stile: {self.stile}, Prezzo: {self.prezzo}'
-
