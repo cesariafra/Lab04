@@ -44,7 +44,25 @@ class Crociera:
         # TODO
 
     def assegna_passeggero_a_cabina(self, codice_cabina, codice_passeggero):
-
+        c=None
+        p=None
+        for cab in self.cabine:
+            if cab.codice == codice_cabina:
+                if cab.disponibile==True:
+                    c=codice_cabina
+                    for pas in self.passeggeri:
+                        if pas.codice == codice_passeggero:
+                            if pas.libero==True:
+                                p=codice_passeggero
+                                pas.cabina=cab.codice
+                                cab.disponibile=False
+                                pas.libero=False
+                            else:
+                                raise Exception(f'Passeggero {pas.codice} già assegnato ad una cabina.')
+                else:
+                    raise Exception(f'Cabina {cab.codice} già assegnata ad un passeggero.')
+        if p is None or c is None:
+            raise Exception(f'Cabina o Passeggero non trovati.')
         """Associa una cabina a un passeggero"""
         # TODO
 
@@ -55,6 +73,9 @@ class Crociera:
 
 
     def elenca_passeggeri(self):
+        for el in self.passeggeri:
+            print (el)
+
         """Stampa l'elenco dei passeggeri mostrando, per ognuno, la cabina a cui è associato, quando applicabile """
         # TODO
 
