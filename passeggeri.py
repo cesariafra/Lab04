@@ -12,6 +12,5 @@ class Passeggero:
         else:
             return f'{self.codice} | {self.nome} {self.cognome}'
 
-
     def __repr__(self):
         return f'CodP: {self.codice}, NomP: {self.nome}, CogP: {self.cognome}'

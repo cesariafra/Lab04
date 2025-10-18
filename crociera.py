@@ -7,7 +7,6 @@ class Crociera:
         self.cabine=list()
         self.passeggeri=list()
         """Inizializza gli attributi e le strutture dati"""
-        # TODO
 
     @property
     def nome(self):
@@ -41,7 +40,6 @@ class Crociera:
         except FileNotFoundError:
             raise FileNotFoundError(f"File {file_path} non trovato")
         """Carica i dati (cabine e passeggeri) dal file"""
-        # TODO
 
     def assegna_passeggero_a_cabina(self, codice_cabina, codice_passeggero):
         c=None
@@ -64,20 +62,15 @@ class Crociera:
         if p is None or c is None:
             raise Exception(f'Cabina o Passeggero non trovati.')
         """Associa una cabina a un passeggero"""
-        # TODO
 
     def cabine_ordinate_per_prezzo(self):
         return sorted(self.cabine, key=lambda c: c.prezzo)
         """Restituisce la lista ordinata delle cabine in base al prezzo"""
-        # TODO
-
 
     def elenca_passeggeri(self):
         for el in self.passeggeri:
             print (el)
-
         """Stampa l'elenco dei passeggeri mostrando, per ognuno, la cabina a cui è associato, quando applicabile """
-        # TODO
 
 if __name__ == '__main__':
     print()
